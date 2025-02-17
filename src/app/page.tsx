@@ -1,9 +1,11 @@
-import Navbar from "./components/navbar";
+import NavBar from "./components/Navbar";
+import HomeBanner from "./components/HomeBanner";
 
 export default function Home() {
   return (
     <div className="bg-background">
-      <Navbar />
+      <NavBar />
+      <HomeBanner />
     </div>
   );
 }
