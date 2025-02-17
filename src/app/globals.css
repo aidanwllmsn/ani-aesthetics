@@ -7,11 +7,20 @@
   --foreground: #171717;
 }
 
+@font-face {
+  font-family: "Ortica";
+  src: url("/fonts/Ortica-Light.woff2") format("woff2"),
+    url("/fonts/Ortica-Light.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #fdfdf1;
     --foreground: #ededed;
     --primary: #351d1d;
+    --btnhover: #1e1010;
   }
 }
 

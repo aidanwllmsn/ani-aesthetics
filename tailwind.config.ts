@@ -8,10 +8,14 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        ortica: ["Ortica", "sans-serif"],
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
         primary: "var(--primary)",
+        btnhover: "var(--btnhover)",
       },
     },
   },
