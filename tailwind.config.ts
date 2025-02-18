@@ -16,7 +16,6 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
         primary: "var(--primary)",
-        btnhover: "var(--btnhover)",
       },
     },
   },

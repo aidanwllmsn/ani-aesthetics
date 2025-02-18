@@ -32,7 +32,7 @@ const CardGrid: React.FC = () => {
   ];
 
   return (
-    <div className="w-full lg:px-3">
+    <div className="w-full lg:px-3 py-20 lg:py-36">
       <h2 className="text-3xl font-ortica text-left text-primary mb-8">
         Discover more for your skin
       </h2>
