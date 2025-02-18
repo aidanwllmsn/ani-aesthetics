@@ -27,9 +27,16 @@ export default function Home() {
 
             {/* Right Column */}
             <div className="lg:w-3/5 w-full">
-              <p className="text-xl lg:text-2xl font-ortica leading-relaxed">
+              <p className="text-2xl font-ortica leading-relaxed">
                 We believe beauty is more than skin deep—it's about feeling
-                confident in your own skin...
+                confident in your own skin. That’s why we create cosmetics for
+                the whole body, designed to nourish, protect, and enhance every
+                part of you. From natural ingredients to sustainable practices,
+                every product we craft reflects our passion for inclusivity and
+                quality.
+                <br />
+                <br />
+                Join us in celebrating beauty for everybody, every day.
               </p>
 
               <button className="mt-6 px-4 py-2 lg:px-6 lg:py-3 font-ortica bg-primary text-white text-base lg:text-lg font-medium rounded-full shadow-md transition-all duration-300 hover:bg-white hover:text-primary">

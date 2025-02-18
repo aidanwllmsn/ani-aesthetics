@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { ShoppingCart, User } from "lucide-react"; // Importing icons
+import { ShoppingCart, User } from "lucide-react";
+import Link from "next/link";
 
 const NavBar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,11 +14,11 @@ const NavBar: React.FC = () => {
     <nav className="bg-background pt-2 lg:pt-5 w-full z-50 relative">
       <div className="w-full flex flex-wrap items-center justify-between md:px-12 lg:px-16 xl:px-28">
         {/* Logo */}
-        <a href="/" className="flex items-center rtl:space-x-reverse ml-5">
+        <Link href="/" className="flex items-center rtl:space-x-reverse ml-5">
           <span className="self-center text-3xl xl:text-4xl whitespace-nowrap text-primary font-ortica">
             Ani Aesthetics
           </span>
-        </a>
+        </Link>
 
         <div className="flex lg:order-2 space-x-3 lg:space-x-4 rtl:space-x-reverse ml-auto mr-5">
           {/* Cart and Profile Icons */}
@@ -69,13 +70,13 @@ const NavBar: React.FC = () => {
         >
           <ul className="flex flex-col p-4 lg:p-0 font-medium lg:space-x-8 rtl:space-x-reverse lg:flex-row lg:mt-0 font-ortica">
             <li>
-              <a
+              <Link
                 href="/"
                 className="block py-2 px-3 text-primary rounded-sm hover:bg-orange-50 lg:hover:bg-transparent lg:hover:underline lg:p-0 "
                 aria-current="page"
               >
                 Home
-              </a>
+              </Link>
             </li>
             <li
               className="relative"
@@ -107,72 +108,72 @@ const NavBar: React.FC = () => {
                 <div className="absolute z-50 bg-white divide-y divide-gray-100 rounded-lg shadow-lg w-full lg:w-44 ">
                   <ul className="py-2 text-sm text-primary ">
                     <li>
-                      <a
+                      <Link
                         href="#"
                         className="block px-4 py-2 transition-all duration-300 hover:bg-gray-100 "
                       >
                         Cleansers
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a
+                      <Link
                         href="#"
                         className="block px-4 py-2 transition-all duration-300 hover:bg-gray-100 "
                       >
                         Toners
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a
+                      <Link
                         href="#"
                         className="block px-4 py-2 transition-all duration-300 hover:bg-gray-100 "
                       >
                         Serum
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a
+                      <Link
                         href="#"
                         className="block px-4 py-2 transition-all duration-300 hover:bg-gray-100 "
                       >
                         Acne Med
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a
+                      <Link
                         href="#"
                         className="block px-4 py-2 transition-all duration-300 hover:bg-gray-100 "
                       >
                         Moisturizer
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a
+                      <Link
                         href="#"
                         className="block px-4 py-2 transition-all duration-300 hover:bg-gray-100 "
                       >
                         SPF
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a
+                      <Link
                         href="#"
                         className="block px-4 py-2 transition-all duration-300 hover:bg-gray-100 "
                       >
                         Supplements
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>
               )}
             </li>
             <li>
-              <a
-                href="#"
+              <Link
+                href="/about"
                 className="block py-2 px-3 text-primary rounded-sm hover:bg-orange-50 lg:hover:bg-transparent lg:hover:underline lg:p-0 "
               >
                 About
-              </a>
+              </Link>
             </li>
             <li
               className="relative"
@@ -207,48 +208,48 @@ const NavBar: React.FC = () => {
                 <div className="absolute z-50 bg-white divide-y divide-gray-100 rounded-lg shadow-lg w-full lg:w-44 ">
                   <ul className="py-2 text-sm text-primary ">
                     <li>
-                      <a
+                      <Link
                         href="#"
                         className="block px-4 py-2 transition-all duration-300 hover:bg-gray-100 "
                       >
                         New Clients
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a
+                      <Link
                         href="#"
                         className="block px-4 py-2 transition-all duration-300 hover:bg-gray-100 "
                       >
                         Online Skin Evaluation
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a
+                      <Link
                         href="#"
                         className="block px-4 py-2 transition-all duration-300 hover:bg-gray-100 "
                       >
                         Acne Bootcamp Program
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a
+                      <Link
                         href="#"
                         className="block px-4 py-2 transition-all duration-300 hover:bg-gray-100 "
                       >
                         Client Portal
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>
               )}
             </li>
             <li>
-              <a
-                href="#"
+              <Link
+                href="/contact"
                 className="block py-2 px-3 text-primary rounded-sm hover:bg-orange-50 lg:hover:bg-transparent lg:hover:underline lg:p-0 "
               >
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
