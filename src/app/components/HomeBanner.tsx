@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const HomeBanner: React.FC = () => {
   return (
-    <div className="relative m-2 lg:m-5 px-4 md:px-12 pb-80">
+    <div className="relative">
       <div className="relative w-full h-[450px] md:h-[750px] mt-4 lg:mt-8">
         <Image
           src="/landing.jpg"
@@ -24,7 +24,7 @@ const HomeBanner: React.FC = () => {
           <p className="mt-4 lg:mt-8 sm:text-base md:text-lg">
             Start your skin care journey today.
           </p>
-          <button className="mt-4 lg:mt-8 px-4 py-2 md:px-6 md:py-4 bg-white text-primary font-medium rounded-xl transition-all duration-300 hover:bg-primary hover:text-white">
+          <button className="mt-4 lg:mt-8 px-4 py-2 md:px-6 md:py-4 bg-white text-primary font-medium shadow-md rounded-full transition-all duration-300 hover:bg-primary hover:text-white">
             Shop Now
           </button>
         </div>

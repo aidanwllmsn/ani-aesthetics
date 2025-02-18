@@ -30,7 +30,7 @@ const NavBar: React.FC = () => {
           {/* Shop now button */}
           <button
             type="button"
-            className="hidden lg:block font-ortica text-white bg-primary transition-all duration-300 hover:bg-white hover:text-primary font-medium rounded-xl text-lg px-4 py-2 text-center"
+            className="hidden lg:block font-ortica text-white bg-primary shadow-md transition-all duration-300 hover:bg-white hover:text-primary font-medium rounded-full text-lg px-4 py-2 text-center"
           >
             Shop now
           </button>
