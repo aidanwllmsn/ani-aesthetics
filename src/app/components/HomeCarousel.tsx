@@ -39,10 +39,7 @@ const HomeCarousel = () => {
   }, [isMounted]);
 
   return (
-    <div className="py-20 lg:py-36 lg:px-64">
-      <h2 className="text-3xl font-ortica text-left text-primary mb-8">
-        Real skin, real results
-      </h2>
+    <>
       <div
         data-hs-carousel='{
         "loadingClasses": "opacity-0",
@@ -134,7 +131,7 @@ const HomeCarousel = () => {
           />
         </div>
       )}
-    </div>
+    </>
   );
 };
 

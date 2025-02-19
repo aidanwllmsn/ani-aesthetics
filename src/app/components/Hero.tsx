@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const HomeBanner: React.FC = () => {
+const Hero: React.FC = () => {
   return (
     <div className="relative">
       <div className="relative w-full h-[450px] md:h-[750px] mt-8">
@@ -33,4 +33,4 @@ const HomeBanner: React.FC = () => {
   );
 };
 
-export default HomeBanner;
+export default Hero;

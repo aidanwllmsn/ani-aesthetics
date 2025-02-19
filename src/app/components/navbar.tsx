@@ -188,7 +188,10 @@ const NavBar: React.FC = () => {
                 setIsServiceDropdownOpen(false);
               }}
             >
-              <button className="flex items-center py-2 px-3 lg:p-0 justify-between w-full text-primary hover:bg-orange-50 lg:hover:bg-transparent lg:hover:underline">
+              <Link
+                href="/services"
+                className="flex items-center py-2 px-3 lg:p-0 justify-between w-full text-primary hover:bg-orange-50 lg:hover:bg-transparent lg:hover:underline"
+              >
                 Services
                 <svg
                   className="w-2.5 h-2.5 ml-2"
@@ -203,13 +206,13 @@ const NavBar: React.FC = () => {
                     d="M1 1l4 4 4-4"
                   />
                 </svg>
-              </button>
+              </Link>
               {isServiceDropdownOpen && (
                 <div className="absolute z-50 bg-white divide-y divide-gray-100 rounded-lg shadow-lg w-full lg:w-44 ">
                   <ul className="py-2 text-sm text-primary ">
                     <li>
                       <Link
-                        href="#"
+                        href="/services/new-clients"
                         className="block px-4 py-2 transition-all duration-300 hover:bg-gray-100 "
                       >
                         New Clients
@@ -225,7 +228,7 @@ const NavBar: React.FC = () => {
                     </li>
                     <li>
                       <Link
-                        href="#"
+                        href="/services/bootcamp"
                         className="block px-4 py-2 transition-all duration-300 hover:bg-gray-100 "
                       >
                         Acne Bootcamp Program

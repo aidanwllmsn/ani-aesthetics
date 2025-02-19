@@ -1,5 +1,5 @@
 "use client";
-import HomeBanner from "./components/HomeBanner";
+import Hero from "./components/Hero";
 import CardGrid from "./components/HomeCards";
 import HomeCarousel from "./components/HomeCarousel";
 import HomeBestSellers from "./components/HomeBestSellers";
@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <div className="bg-background m-2 lg:m-5 px-4 md:px-12">
       <FadeInUp>
-        <HomeBanner />
+        <Hero />
       </FadeInUp>
 
       <FadeInUp>
@@ -47,9 +47,14 @@ export default function Home() {
         </div>
       </FadeInUp>
 
-      <FadeInUp>
-        <HomeCarousel />
-      </FadeInUp>
+      <div className="py-20 lg:py-36 lg:px-64">
+        <h2 className="text-3xl font-ortica text-left text-primary mb-8">
+          Real skin, real results
+        </h2>
+        <FadeInUp>
+          <HomeCarousel />
+        </FadeInUp>
+      </div>
 
       <FadeInUp>
         <HomeBestSellers />

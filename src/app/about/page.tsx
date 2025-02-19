@@ -2,7 +2,7 @@
 import FadeInUp from "../components/FadeInUp";
 import Image from "next/image";
 
-export default function Home() {
+export default function About() {
   return (
     <div className="bg-background m-2 lg:m-5 px-4 md:px-12">
       <FadeInUp>
