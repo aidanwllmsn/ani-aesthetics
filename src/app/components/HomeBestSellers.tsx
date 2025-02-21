@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import ProductCard from "./ProductCard";
 
 const HomeBestSellers = () => {
   const [isMounted, setIsMounted] = useState(false);
@@ -33,9 +35,12 @@ const HomeBestSellers = () => {
     <div className="lg:px-3">
       <div className="flex items-center justify-between w-full mb-8 lg:mb-16">
         <h2 className="text-3xl font-ortica text-primary">Top Sellers</h2>
-        <button className="text-primary text-xl font-ortica underline hover:no-underline">
+        <Link
+          href="/shop"
+          className="text-primary text-xl font-ortica underline hover:no-underline"
+        >
           Shop all
-        </button>
+        </Link>
       </div>
       <div
         data-hs-carousel='{
@@ -53,44 +58,24 @@ const HomeBestSellers = () => {
           <div className="relative min-h-[24rem] lg:min-h-[32rem] -mx-1">
             <div className="hs-carousel-body absolute top-0 bottom-0 start-0 flex flex-nowrap opacity-0 cursor-grab transition-transform duration-700 hs-carousel-dragging:transition-none hs-carousel-dragging:cursor-grabbing">
               <div className="hs-carousel-slide px-3">
-                <div className="flex justify-center h-full bg-gray-100 p-6 rounded-lg">
-                  <span className="self-center text-sm text-gray-800 transition duration-700">
-                    First slide
-                  </span>
-                </div>
+                <ProductCard />
               </div>
               <div className="hs-carousel-slide px-3">
-                <div className="flex justify-center h-full bg-gray-200 p-6 rounded-lg">
-                  <span className="self-center text-sm text-gray-800 transition duration-700">
-                    Second slide
-                  </span>
-                </div>
+                <ProductCard />
               </div>
               <div className="hs-carousel-slide px-3">
-                <div className="flex justify-center h-full bg-gray-300 p-6 rounded-lg">
-                  <span className="self-center text-sm text-gray-800 transition duration-700">
-                    Third slide
-                  </span>
-                </div>
+                <ProductCard />
               </div>
               <div className="hs-carousel-slide px-3">
-                <div className="flex justify-center h-full bg-gray-100 p-6 rounded-lg">
-                  <span className="self-center text-sm text-gray-800 transition duration-700">
-                    Fourth slide
-                  </span>
-                </div>
+                <ProductCard />
               </div>
-              <div className="hs-carousel-slide px-3">
-                <div className="flex justify-center h-full bg-gray-200 p-6 rounded-lg">
-                  <span className="self-center text-sm text-gray-800 transition duration-700">
-                    Fifth slide
-                  </span>
-                </div>
+              <div className="hs-carousel-slide px-3 text-gray-800 ">
+                <ProductCard />
               </div>
               <div className="hs-carousel-slide px-3">
                 <div className="flex justify-center h-full bg-gray-300 p-6 rounded-lg">
                   <span className="self-center text-sm text-gray-800 transition duration-700">
-                    Sixth slide
+                    <ProductCard />
                   </span>
                 </div>
               </div>

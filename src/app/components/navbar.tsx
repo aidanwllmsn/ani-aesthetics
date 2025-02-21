@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ShoppingCart, User } from "lucide-react";
 import Link from "next/link";
 
@@ -8,13 +8,30 @@ const NavBar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isShopDropdownOpen, setIsShopDropdownOpen] = useState(false);
   const [isServiceDropdownOpen, setIsServiceDropdownOpen] = useState(false);
+  const [active, setActive] = useState("home");
   let timeoutId: NodeJS.Timeout;
+
+  // Sync state with the current URL on component mount
+  useEffect(() => {
+    const currentPath = window.location.pathname;
+    if (currentPath === "/about") {
+      setActive("about");
+    } else if (currentPath === "/contact") {
+      setActive("contact");
+    } else {
+      setActive("home");
+    }
+  }, []);
 
   return (
     <nav className="bg-background pt-2 lg:pt-5 w-full z-50 relative">
       <div className="w-full flex flex-wrap items-center justify-between md:px-12 lg:px-16 xl:px-28">
         {/* Logo */}
-        <Link href="/" className="flex items-center rtl:space-x-reverse ml-5">
+        <Link
+          href="/"
+          className="flex items-center rtl:space-x-reverse ml-5"
+          onClick={() => setActive("home")}
+        >
           <span className="self-center text-3xl xl:text-4xl whitespace-nowrap text-primary font-ortica">
             Ani Aesthetics
           </span>
@@ -32,6 +49,7 @@ const NavBar: React.FC = () => {
           <button
             type="button"
             className="hidden lg:block font-ortica text-white bg-primary shadow-md transition-all duration-300 hover:bg-white hover:text-primary font-medium rounded-full text-lg px-4 py-2 text-center"
+            onClick={() => setActive("shop")}
           >
             Shop now
           </button>
@@ -72,7 +90,10 @@ const NavBar: React.FC = () => {
             <li>
               <Link
                 href="/"
-                className="block py-2 px-3 text-primary rounded-sm hover:bg-orange-50 lg:hover:bg-transparent lg:hover:underline lg:p-0 "
+                className={`block py-2 px-3 text-primary rounded-sm hover:bg-orange-50 lg:hover:bg-transparent lg:hover:underline lg:p-0 ${
+                  active === "home" ? "underline" : ""
+                }`}
+                onClick={() => setActive("home")}
                 aria-current="page"
               >
                 Home
@@ -88,7 +109,13 @@ const NavBar: React.FC = () => {
                 setIsShopDropdownOpen(false);
               }}
             >
-              <button className="flex items-center py-2 px-3 lg:p-0 justify-between w-full text-primary hover:bg-orange-50 lg:hover:bg-transparent lg:hover:underline">
+              <Link
+                href="/shop"
+                className={`flex items-center py-2 px-3 lg:p-0 justify-between w-full text-primary hover:bg-orange-50 lg:hover:bg-transparent lg:hover:underline ${
+                  active === "shop" ? "underline" : ""
+                }`}
+                onClick={() => setActive("shop")}
+              >
                 Shop
                 <svg
                   className="w-2.5 h-2.5 ml-2"
@@ -103,7 +130,7 @@ const NavBar: React.FC = () => {
                     d="M1 1l4 4 4-4"
                   />
                 </svg>
-              </button>
+              </Link>
               {isShopDropdownOpen && (
                 <div className="absolute z-50 bg-white divide-y divide-gray-100 rounded-lg shadow-lg w-full lg:w-44 ">
                   <ul className="py-2 text-sm text-primary ">
@@ -111,6 +138,7 @@ const NavBar: React.FC = () => {
                       <Link
                         href="#"
                         className="block px-4 py-2 transition-all duration-300 hover:bg-gray-100 "
+                        onClick={() => setActive("shop")}
                       >
                         Cleansers
                       </Link>
@@ -119,6 +147,7 @@ const NavBar: React.FC = () => {
                       <Link
                         href="#"
                         className="block px-4 py-2 transition-all duration-300 hover:bg-gray-100 "
+                        onClick={() => setActive("shop")}
                       >
                         Toners
                       </Link>
@@ -127,6 +156,7 @@ const NavBar: React.FC = () => {
                       <Link
                         href="#"
                         className="block px-4 py-2 transition-all duration-300 hover:bg-gray-100 "
+                        onClick={() => setActive("shop")}
                       >
                         Serum
                       </Link>
@@ -135,6 +165,7 @@ const NavBar: React.FC = () => {
                       <Link
                         href="#"
                         className="block px-4 py-2 transition-all duration-300 hover:bg-gray-100 "
+                        onClick={() => setActive("shop")}
                       >
                         Acne Med
                       </Link>
@@ -143,6 +174,7 @@ const NavBar: React.FC = () => {
                       <Link
                         href="#"
                         className="block px-4 py-2 transition-all duration-300 hover:bg-gray-100 "
+                        onClick={() => setActive("shop")}
                       >
                         Moisturizer
                       </Link>
@@ -151,6 +183,7 @@ const NavBar: React.FC = () => {
                       <Link
                         href="#"
                         className="block px-4 py-2 transition-all duration-300 hover:bg-gray-100 "
+                        onClick={() => setActive("shop")}
                       >
                         SPF
                       </Link>
@@ -159,6 +192,7 @@ const NavBar: React.FC = () => {
                       <Link
                         href="#"
                         className="block px-4 py-2 transition-all duration-300 hover:bg-gray-100 "
+                        onClick={() => setActive("shop")}
                       >
                         Supplements
                       </Link>
@@ -170,7 +204,10 @@ const NavBar: React.FC = () => {
             <li>
               <Link
                 href="/about"
-                className="block py-2 px-3 text-primary rounded-sm hover:bg-orange-50 lg:hover:bg-transparent lg:hover:underline lg:p-0 "
+                className={`block py-2 px-3 text-primary rounded-sm hover:bg-orange-50 lg:hover:bg-transparent lg:hover:underline lg:p-0 ${
+                  active === "about" ? "underline" : ""
+                }`}
+                onClick={() => setActive("about")}
               >
                 About
               </Link>
@@ -190,7 +227,10 @@ const NavBar: React.FC = () => {
             >
               <Link
                 href="/services"
-                className="flex items-center py-2 px-3 lg:p-0 justify-between w-full text-primary hover:bg-orange-50 lg:hover:bg-transparent lg:hover:underline"
+                className={`flex items-center py-2 px-3 lg:p-0 justify-between w-full text-primary hover:bg-orange-50 lg:hover:bg-transparent lg:hover:underline ${
+                  active === "services" ? "underline" : ""
+                }`}
+                onClick={() => setActive("services")}
               >
                 Services
                 <svg
@@ -213,6 +253,7 @@ const NavBar: React.FC = () => {
                     <li>
                       <Link
                         href="/services/new-clients"
+                        onClick={() => setActive("services")}
                         className="block px-4 py-2 transition-all duration-300 hover:bg-gray-100 "
                       >
                         New Clients
@@ -221,6 +262,7 @@ const NavBar: React.FC = () => {
                     <li>
                       <Link
                         href="#"
+                        onClick={() => setActive("services")}
                         className="block px-4 py-2 transition-all duration-300 hover:bg-gray-100 "
                       >
                         Online Skin Evaluation
@@ -229,6 +271,7 @@ const NavBar: React.FC = () => {
                     <li>
                       <Link
                         href="/services/bootcamp"
+                        onClick={() => setActive("services")}
                         className="block px-4 py-2 transition-all duration-300 hover:bg-gray-100 "
                       >
                         Acne Bootcamp Program
@@ -237,6 +280,7 @@ const NavBar: React.FC = () => {
                     <li>
                       <Link
                         href="#"
+                        onClick={() => setActive("services")}
                         className="block px-4 py-2 transition-all duration-300 hover:bg-gray-100 "
                       >
                         Client Portal
@@ -249,7 +293,10 @@ const NavBar: React.FC = () => {
             <li>
               <Link
                 href="/contact"
-                className="block py-2 px-3 text-primary rounded-sm hover:bg-orange-50 lg:hover:bg-transparent lg:hover:underline lg:p-0 "
+                onClick={() => setActive("contact")}
+                className={`block py-2 px-3 text-primary rounded-sm hover:bg-orange-50 lg:hover:bg-transparent lg:hover:underline lg:p-0 ${
+                  active === "contact" ? "underline" : ""
+                }`}
               >
                 Contact
               </Link>
